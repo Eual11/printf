@@ -37,8 +37,7 @@ int run_printf(const char *format, va_list args, buffer_t *output)
 	 *
 	 * Return: nothing
 	 */
-
-		int (*f)(va_list, buffer_t *,
+	unsigned int (*f)(va_list, buffer_t *,
 			unsigned char, int, int, unsigned char);
 
 	for (i = 0; *(format + i); i++)
