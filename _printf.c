@@ -13,9 +13,9 @@ int _printf(const char *format, ...);
 
 void clean(va_list args, buffer_t *output)
 {
-    va_end(args);
-    write(1, output->start, output->len);
-    free_buffer(output);
+	va_end(args);
+	write(1, output->start, output->len);
+	free_buffer(output);
 }
 /**
  * run_printf - Reads the format string.
@@ -31,7 +31,14 @@ int run_printf(const char *format, va_list args, buffer_t *output)
 	int i, nWid, prec, ret = 0;
 	char cTmp;
 	unsigned char flags, len;
-	unsigned int (*f)(va_list, buffer_t *,
+
+	/**
+	 * f - idk
+	 *
+	 * Return: nothing
+	 */
+
+		int (*f)(va_list, buffer_t *,
 			unsigned char, int, int, unsigned char);
 
 	for (i = 0; *(format + i); i++)
@@ -68,7 +75,7 @@ int run_printf(const char *format, va_list args, buffer_t *output)
 }
 
 /**
- * _printf - an implementaion of the std printf Ootputs a formatted string.
+ * _printf - an implementaion of std printf
  * @format: Character string to print - may contain directives.
  *
  * Return: The number of characters printed.
